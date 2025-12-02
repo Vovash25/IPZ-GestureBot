@@ -1,0 +1,45 @@
+1. Przesuwanie obiektu (Move / Drag)
+
+Gest służący do przeciągania elementu w nowe miejsce. Składa się z dwóch wyraźnych faz, oddzielonych krótką pauzą.
+
+Faza 1: Wybór (Select)
+
+Akcja: Jedno szybkie naciśnięcie na obiekt i puszczenie (tap).
+Funkcja: Rejestruje rozpoczęcie operacji zaznaczenia/przesuwania.
+
+Faza 2: Chwyt i przesunięcie (Grab & Drag)
+
+Akcja: Ponowne naciśnięcie, długie przytrzymanie, a następnie przesuwanie końcówki robota w linii prostej do nowej pozycji.
+Funkcja: Przeciąga wybrany obiekt na ekranie do nowych współrzędnych.
+
+2. Obrót obiektu (Rotate Left / Rotate Right)
+
+Specjalny gest oparty na ruchu poziomym, który określa kierunek obrotu.
+
+Akcja robota:
+
+– Naciśnięcie i długie przytrzymanie końcówki stylusa.
+
+W trakcie przytrzymania:
+
+Ruch w PRAWO: inicjuje obrót zgodnie z ruchem wskazówek zegara.
+
+Ruch w LEWO: inicjuje obrót przeciwnie do ruchu wskazówek zegara.
+
+Funkcja: Obraca zaznaczony obiekt wokół jego środka.
+
+3. Usuwanie obiektu (Triple-Tap Delete)
+
+Gest usuwania oparty na rytmie trzech szybkich dotknięć.
+
+Akcja robota:
+
+Trzeba wykonać trzy kolejne naciśnięcia na ten sam obiekt.
+
+Warunek:
+
+Wszystkie trzy dotknięcia muszą nastąpić w określonym czasie (np. w ciągu 4 sekund).
+
+Funkcja:
+
+Usuwa zaznaczony obiekt z interfejsu.
