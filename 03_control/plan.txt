@@ -1,0 +1,32 @@
+Postęp prac nad projektem robota SCARA (Dual-Arm)
+1. Cel etapu: Budowa "Cyfrowego Bliźniaka" (Digital Twin)
+Głównym osiągnięciem tego etapu było stworzenie pełnej symulacji programowej, która odzwierciedla fizyczne parametry przyszłego urządzenia. Zamiast pisać prosty skrypt, wdrożyliśmy architekturę modułową, co pozwala na testowanie logiki sterowania bez posiadania fizycznego sprzętu.
+
+2. Architektura Systemu (Podział Modułowy)
+Program został rozbity na cztery kluczowe komponenty, co jest standardem w profesjonalnej robotyce:
+
+kinematics.py: Silnik matematyczny obliczający odwrotną kinematykę (IK) dla ramion o długościach 246 mm i 199 mm.
+
+robot_logic.py: Logika decyzyjna (tzw. "mózg" robota), zarządzająca trajektorią ruchu i sekwencjami autonomicznymi.
+
+models.py: Cyfrowa reprezentacja obiektów fizycznych na ekranie.
+
+main.py: Interfejs operatora (HMI), zintegrowany z obsługą ekranu dotykowego.
+
+3. Kluczowe Funkcjonalności
+Udało nam się zaimplementować i przetestować następujące mechanizmy:
+
+Tryb Autonomiczny (Auto Mode): Robot samodzielnie skanuje przestrzeń roboczą, lokalizuje obiekty i wykonuje zaprogramowane zadania (np. sekwencję "Triple Tap").
+
+Obsługa Interakcji Dotykowej: System interpretuje gesty (przesuwanie, obracanie) i natychmiastowo przelicza je na ruchy ramion w milimetrach.
+
+Bezpieczeństwo Programowe: Wprowadzono limity zasięgu (445 mm), które blokują ruchy mogące uszkodzić mechanikę robota.
+
+4. Plan wdrożenia fizycznego (Next Steps)
+Kolejne kroki przybliżają nas do integracji z Jetson Nano i fizycznymi silnikami:
+
+Etap A: Komunikacja Serial (USB): Implementacja protokołu wymiany danych między Pythonem a Arduino (przesyłanie kątów serwomechanizmów/silników krokowych).
+
+Etap B: Kalibracja Przestrzeni: Mapowanie pikseli ekranu na przestrzeń roboczą robota za pomocą skryptu kalibracyjnego (wykorzystanie 4 punktów odniesienia).
+
+Etap C: Montaż Mechaniczny: Zastosowanie łożysk o niskim tarciu i wydruk części z materiału o wysokiej sztywności (np. PETG), aby uniknąć ugięć przy ramionach 246 mm.
