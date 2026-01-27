@@ -1,5 +1,6 @@
 Gesture Bot Project
 Projekt zespolowy - robot SCARA sterowany gestami(Gesture Bot)
+
 Sklad zespolu:
 - Vyshnovetskyi Volodymyr - Inzynier konstruktor"
 - Zakhar Semiankevich - Inzynier napedu i elektroniki
